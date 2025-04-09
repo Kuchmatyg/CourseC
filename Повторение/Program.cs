@@ -148,8 +148,7 @@ switch(inputDayOfWeek)
 Console.WriteLine();
 #endregion
 
-
-#region case case-t1 
+#region while while-t1 
 Console.WriteLine("===== Задача 9 =====");
 Console.Write("Введите сумму 0 < P <= 25 которая в месяц будет прибавляться к вкладу: ");
 int percent = int.Parse(Console.ReadLine());
@@ -164,6 +163,32 @@ void FindDepositAndCountMounths(int per)
         countMouths++;
     }
     Console.WriteLine($"От 1000 до {deposite} за {countMouths} месяц(а/ев) при сумме процента {per}");
+
 }
 Console.WriteLine();
+#endregion
+  
+  #region case case-t1 
+Console.WriteLine("===== Задача 10 =====");
+Console.Write("Введите коэффициент A (A != 0): ");
+int coefficientA = int.Parse(Console.ReadLine());
+
+Console.Write("Введите коэффициент B: ");
+int coefficientB = int.Parse(Console.ReadLine());
+
+Console.Write("Введите коэффициент C: ");
+int coefficientC = int.Parse(Console.ReadLine());
+int countRoots = ReturnTheRootsOfTheEquation(coefficientA, coefficientB, coefficientC);
+Console.WriteLine($"Количестов корней: {countRoots}   для уравнения {coefficientA}x^2+{coefficientB}x+{coefficientC}=0");
+int ReturnTheRootsOfTheEquation(int a, int b, int c)
+{
+    float D = b*b - 4*a*c;
+    if (D < 0)
+        return 0;
+    else if (D > 0)
+        return 2;
+    else
+        return 1;
+  
+}
 #endregion
