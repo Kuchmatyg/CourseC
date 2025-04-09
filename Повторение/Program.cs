@@ -19,35 +19,6 @@ if (result)
 }
 #endregion
 
-#region if if-t1
-Console.WriteLine("===== Задача 6 =====");
-Console.Write("Введиете 1-ое число: ");
-string firstInput = Console.ReadLine();
-
-Console.Write("Введиете 2-ое число: ");
-string secondInput = Console.ReadLine();
-
-Console.Write("Введиете 3-ье число: ");
-string thirdInput = Console.ReadLine();
-int minNum = MinNumber(firstInput, secondInput, thirdInput);
-Console.WriteLine($"Наименьшее число {minNum} среди [{firstInput}, {secondInput}, {thirdInput}]");
-int MinNumber(string first, string second, string third)
-{
-    int firstNum = int.Parse(first);
-    int secondNum = int.Parse(second);
-    int thirdNum = int.Parse(third);
-
-    if (firstNum < secondNum && firstNum < thirdNum)
-        return firstNum;
-    else if (secondNum < firstNum && secondNum < thirdNum)
-        return secondNum;
-    else
-        return thirdNum;
-
-}
-Console.WriteLine();
-#endregion
-
 #region integer integer-t1
 
 Console.Write("Введите двузначное число: ");
@@ -114,6 +85,37 @@ bool CheckCondition(string strA, string strB)
 Console.WriteLine();
 #endregion
 
+#region if if-t1
+Console.WriteLine("===== Задача 6 =====");
+Console.Write("Введиете 1-ое число: ");
+string firstInput = Console.ReadLine();
+
+Console.Write("Введиете 2-ое число: ");
+string secondInput = Console.ReadLine();
+
+Console.Write("Введиете 3-ье число: ");
+string thirdInput = Console.ReadLine();
+int minNum = MinNumber(firstInput, secondInput, thirdInput);
+Console.WriteLine($"Наименьшее число {minNum} среди [{firstInput}, {secondInput}, {thirdInput}]");
+int MinNumber(string first, string second, string third)
+{
+    int firstNum = int.Parse(first);
+    int secondNum = int.Parse(second);
+    int thirdNum = int.Parse(third);
+
+    if (firstNum < secondNum && firstNum < thirdNum)
+        return firstNum;
+    else if (secondNum < firstNum && secondNum < thirdNum)
+        return secondNum;
+    else
+        return thirdNum;
+
+}
+Console.WriteLine();
+#endregion
+
+
+
 #region case case-t1 
 Console.WriteLine("===== Задача 7 =====");
 Console.Write("Введите цифру от 1-7: ");
@@ -144,6 +146,23 @@ switch(inputDayOfWeek)
         break;
     default:
         break;
+}
+Console.WriteLine();
+#endregion
+
+#region for for-t1
+Console.WriteLine("===== Задача 8 =====");
+Console.Write("Введите 1-ое число N=");
+int N = int.Parse(Console.ReadLine());
+Console.Write("Введите 2-ое число K=");
+int K = int.Parse(Console.ReadLine());
+PrintK(N, K);
+void PrintK(int n, int k)
+{
+    for (int i = 0; i < n; i++)
+    {
+        Console.WriteLine(k);
+    }
 }
 Console.WriteLine();
 #endregion
