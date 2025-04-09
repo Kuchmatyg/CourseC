@@ -56,3 +56,31 @@ int MultiplyNumber(string number)
 }
 
 #endregion
+
+#region integer integer-t2
+Console.WriteLine("===== Задача 5 =====");
+Console.Write("Введите число для A = ");
+string inputA = Console.ReadLine();
+Console.Write("Введите число для B = ");
+string inputB = Console.ReadLine();
+bool resultCheckCondition = CheckCondition(inputA, inputB);
+bool CheckCondition(string strA, string strB)
+{
+    int intA = int.Parse(strA);
+    int intB = int.Parse(strB);
+
+    if (intA > 2 && intB <= 2)
+    {
+        Console.WriteLine("Условие A > 2 и B <= 3 выполнилось");
+        return true;
+    }
+
+    else
+    {
+        Console.WriteLine("Условие A > 2 и B <= 3 невыполнилось");
+        return false;
+    }
+
+}
+Console.WriteLine();
+#endregion
