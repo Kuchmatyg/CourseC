@@ -148,7 +148,27 @@ switch(inputDayOfWeek)
 Console.WriteLine();
 #endregion
 
-#region case case-t1 
+#region while while-t1 
+Console.WriteLine("===== Задача 9 =====");
+Console.Write("Введите сумму 0 < P <= 25 которая в месяц будет прибавляться к вкладу: ");
+int percent = int.Parse(Console.ReadLine());
+FindDepositAndCountMounths(percent);
+void FindDepositAndCountMounths(int per)
+{
+    int deposite = 1000;
+    int countMouths = 0;
+    while (deposite < 1100)
+    {
+        deposite += per;
+        countMouths++;
+    }
+    Console.WriteLine($"От 1000 до {deposite} за {countMouths} месяц(а/ев) при сумме процента {per}");
+
+}
+Console.WriteLine();
+#endregion
+  
+  #region case case-t1 
 Console.WriteLine("===== Задача 10 =====");
 Console.Write("Введите коэффициент A (A != 0): ");
 int coefficientA = int.Parse(Console.ReadLine());
@@ -169,7 +189,6 @@ int ReturnTheRootsOfTheEquation(int a, int b, int c)
         return 2;
     else
         return 1;
-
+  
 }
-Console.WriteLine();
 #endregion
