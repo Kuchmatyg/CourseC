@@ -47,3 +47,103 @@ int MinNumber(string first, string second, string third)
 }
 Console.WriteLine();
 #endregion
+
+#region integer integer-t1
+
+Console.Write("Введите двузначное число: ");
+string input = Console.ReadLine();
+int sumInput = SumNumber(input);
+int multiplyInput = MultiplyNumber(input);
+int SumNumber(string number)
+{
+    int num = int.Parse(number);
+    int sum = 0;
+    if (num >= 10 && num <= 99)
+    {
+        int firstDigit = num / 10; // Получаем первую цифру
+        int secondDigit = num % 10; // Получаем вторую цифру
+        sum = firstDigit + secondDigit;
+
+        Console.WriteLine($"Сумма цифр числа {number} равна {sum}");
+    }
+    return sum;
+}
+
+int MultiplyNumber(string number)
+{
+    int num = int.Parse(number);
+    int multiply = 0;
+    if (num >= 10 && num <= 99)
+    {
+        int firstDigit = num / 10; // Получаем первую цифру
+        int secondDigit = num % 10; // Получаем вторую цифру
+        multiply = firstDigit * secondDigit;
+
+        Console.WriteLine($"Сумма цифр числа {number} равна {multiply}");
+    }
+    return multiply;
+}
+
+#endregion
+
+#region integer integer-t2
+Console.WriteLine("===== Задача 5 =====");
+Console.Write("Введите число для A = ");
+string inputA = Console.ReadLine();
+Console.Write("Введите число для B = ");
+string inputB = Console.ReadLine();
+bool resultCheckCondition = CheckCondition(inputA, inputB);
+bool CheckCondition(string strA, string strB)
+{
+    int intA = int.Parse(strA);
+    int intB = int.Parse(strB);
+
+    if (intA > 2 && intB <= 2)
+    {
+        Console.WriteLine("Условие A > 2 и B <= 3 выполнилось");
+        return true;
+    }
+
+    else
+    {
+        Console.WriteLine("Условие A > 2 и B <= 3 невыполнилось");
+        return false;
+    }
+
+}
+Console.WriteLine();
+#endregion
+
+#region case case-t1 
+Console.WriteLine("===== Задача 7 =====");
+Console.Write("Введите цифру от 1-7: ");
+string inputDayOfWeek = Console.ReadLine();
+
+switch(inputDayOfWeek)
+{
+    case "1":
+        Console.WriteLine($"Понедельник соответствует цифре {inputDayOfWeek}");
+        break;
+    case "2":
+        Console.WriteLine($"Вторник соответствует цифре {inputDayOfWeek}");
+        break;
+    case "3":
+        Console.WriteLine($"Среда сответствует цифре {inputDayOfWeek}");
+        break;
+    case "4":
+        Console.WriteLine($"Четверг соответствует цифре {inputDayOfWeek}");
+        break;
+    case "5":
+        Console.WriteLine($"Пятница соответствует цифре {inputDayOfWeek}");
+        break;
+    case "6":
+        Console.WriteLine($"Суббота соответствует цифре {inputDayOfWeek}");
+        break;
+    case "7":
+        Console.WriteLine($"Воскресенье соответствует цифре {inputDayOfWeek}");
+        break;
+    default:
+        break;
+}
+Console.WriteLine();
+#endregion
