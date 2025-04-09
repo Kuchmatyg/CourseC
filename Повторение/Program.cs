@@ -19,6 +19,7 @@ if (result)
 }
 #endregion
 
+
 #region integer integer-t1
 
 Console.Write("Введите двузначное число: ");
@@ -81,6 +82,40 @@ bool CheckCondition(string strA, string strB)
         return false;
     }
 
+}
+Console.WriteLine();
+#endregion
+
+#region case case-t1 
+Console.WriteLine("===== Задача 7 =====");
+Console.Write("Введите цифру от 1-7: ");
+string inputDayOfWeek = Console.ReadLine();
+
+switch(inputDayOfWeek)
+{
+    case "1":
+        Console.WriteLine($"Понедельник соответствует цифре {inputDayOfWeek}");
+        break;
+    case "2":
+        Console.WriteLine($"Вторник соответствует цифре {inputDayOfWeek}");
+        break;
+    case "3":
+        Console.WriteLine($"Среда сответствует цифре {inputDayOfWeek}");
+        break;
+    case "4":
+        Console.WriteLine($"Четверг соответствует цифре {inputDayOfWeek}");
+        break;
+    case "5":
+        Console.WriteLine($"Пятница соответствует цифре {inputDayOfWeek}");
+        break;
+    case "6":
+        Console.WriteLine($"Суббота соответствует цифре {inputDayOfWeek}");
+        break;
+    case "7":
+        Console.WriteLine($"Воскресенье соответствует цифре {inputDayOfWeek}");
+        break;
+    default:
+        break;
 }
 Console.WriteLine();
 #endregion
