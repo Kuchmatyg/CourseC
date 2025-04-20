@@ -32,17 +32,37 @@
         Console.Write("Введите 2-ую сторуну прямоугольника: ");
         string b = Console.ReadLine();
 
-        bool resultA = int.TryParse(a, out int numberA);
-        bool resultB = int.TryParse(b, out int numberB);
-    
-        if (resultA && resultB)
-        {
-            int p = 2 * (numberA + numberB);
-            int s = numberA * numberB;
+        var (perimeter, area) = CalculateThePerimeterAndArea(a, b);
 
-            Console.WriteLine($"Периметр прямоугольника P={p}");
-            Console.WriteLine($"Площадь прямоугольника S={s}");
-        }
+        Console.WriteLine($"Периметр прямоугольника P={perimeter}");
+        Console.WriteLine($"Площадь прямоугольника S={area}");
+        //if (resultA && resultB)
+        //{
+        //    int p = 2 * (numberA + numberB);
+        //    int s = numberA * numberB;
+
+        //    Console.WriteLine($"Периметр прямоугольника P={p}");
+        //    Console.WriteLine($"Площадь прямоугольника S={s}");
+        //}
+        Console.WriteLine();
+        #endregion
+
+        #region integer integer-t1
+        Console.WriteLine("===== Задача 4 =====");
+        Console.Write("Введите двузначное число: ");
+        string input = Console.ReadLine();
+        int sumInput = SumNumber(input);
+        int multiplyInput = MultiplyNumber(input);
+        #endregion
+
+        #region integer integer-t2
+        Console.WriteLine("===== Задача 5 =====");
+        Console.Write("Введите число для A = ");
+        string inputA = Console.ReadLine();
+        Console.Write("Введите число для B = ");
+        string inputB = Console.ReadLine();
+        bool resultCheckCondition = CheckCondition(inputA, inputB);
+        Console.WriteLine();
         #endregion
 
         #region if if-t1
@@ -57,137 +77,25 @@
         string thirdInput = Console.ReadLine();
         int minNum = MinNumber(firstInput, secondInput, thirdInput);
         Console.WriteLine($"Наименьшее число {minNum} среди [{firstInput}, {secondInput}, {thirdInput}]");
-        int MinNumber(string first, string second, string third)
-        {
-            int firstNum = int.Parse(first);
-            int secondNum = int.Parse(second);
-            int thirdNum = int.Parse(third);
-
-            if (firstNum < secondNum && firstNum < thirdNum)
-                return firstNum;
-            else if (secondNum < firstNum && secondNum < thirdNum)
-                return secondNum;
-            else
-                return thirdNum;
-
-        }
         Console.WriteLine();
         #endregion
 
-        #region integer integer-t1
 
-        Console.Write("Введите двузначное число: ");
-        string input = Console.ReadLine();
-        int sumInput = SumNumber(input);
-        int multiplyInput = MultiplyNumber(input);
-        //int SumNumber(string number)
-        //{
-        //    int num = int.Parse(number);
-        //    int sum = 0;
-        //    if (num >= 10 && num <= 99)
-        //    {
-        //        int firstDigit = num / 10; // Получаем первую цифру
-        //        int secondDigit = num % 10; // Получаем вторую цифру
-        //        sum = firstDigit + secondDigit;
-
-        //        Console.WriteLine($"Сумма цифр числа {number} равна {sum}");
-        //    }
-        //    return sum;
-        //}
-
-        //int MultiplyNumber(string number)
-        //{
-        //    int num = int.Parse(number);
-        //    int multiply = 0;
-        //    if (num >= 10 && num <= 99)
-        //    {
-        //        int firstDigit = num / 10; // Получаем первую цифру
-        //        int secondDigit = num % 10; // Получаем вторую цифру
-        //        multiply = firstDigit * secondDigit;
-
-        //        Console.WriteLine($"Сумма цифр числа {number} равна {multiply}");
-        //    }
-        //    return multiply;
-        //}
-
-        #endregion
-        #region integer integer-t2
-        Console.WriteLine("===== Задача 5 =====");
-        Console.Write("Введите число для A = ");
-        string inputA = Console.ReadLine();
-        Console.Write("Введите число для B = ");
-        string inputB = Console.ReadLine();
-        bool resultCheckCondition = CheckCondition(inputA, inputB);
-        bool CheckCondition(string strA, string strB)
-        {
-            int intA = int.Parse(strA);
-            int intB = int.Parse(strB);
-
-            if (intA > 2 && intB <= 2)
-            {
-                Console.WriteLine("Условие A > 2 и B <= 3 выполнилось");
-                return true;
-            }
-
-            else
-            {
-                Console.WriteLine("Условие A > 2 и B <= 3 невыполнилось");
-                return false;
-            }
-
-        }
-        Console.WriteLine();
-        #endregion
         #region case case-t1 
         Console.WriteLine("===== Задача 7 =====");
         Console.Write("Введите цифру от 1-7: ");
         string inputDayOfWeek = Console.ReadLine();
-
-        switch(inputDayOfWeek)
-        {
-            case "1":
-                Console.WriteLine($"Понедельник соответствует цифре {inputDayOfWeek}");
-                break;
-            case "2":
-                Console.WriteLine($"Вторник соответствует цифре {inputDayOfWeek}");
-                break;
-            case "3":
-                Console.WriteLine($"Среда сответствует цифре {inputDayOfWeek}");
-                break;
-            case "4":
-                Console.WriteLine($"Четверг соответствует цифре {inputDayOfWeek}");
-                break;
-            case "5":
-                Console.WriteLine($"Пятница соответствует цифре {inputDayOfWeek}");
-                break;
-            case "6":
-                Console.WriteLine($"Суббота соответствует цифре {inputDayOfWeek}");
-                break;
-            case "7":
-                Console.WriteLine($"Воскресенье соответствует цифре {inputDayOfWeek}");
-                break;
-            default:
-                break;
-        }
+        string messageDayOfWeek = ReturnMessageDayOfWeek(inputDayOfWeek);
+        Console.WriteLine(messageDayOfWeek);
         Console.WriteLine();
         #endregion
+
         #region while while-t1 
         Console.WriteLine("===== Задача 9 =====");
         Console.Write("Введите сумму 0 < P <= 25 которая в месяц будет прибавляться к вкладу: ");
         int percent = int.Parse(Console.ReadLine());
-        FindDepositAndCountMounths(percent);
-        void FindDepositAndCountMounths(int per)
-        {
-            int deposite = 1000;
-            int countMouths = 0;
-            while (deposite < 1100)
-            {
-                deposite += per;
-                countMouths++;
-            }
-            Console.WriteLine($"От 1000 до {deposite} за {countMouths} месяц(а/ев) при сумме процента {per}");
-
-        }
+        string messageDepositAndCountMounths = FindDepositAndCountMounths(percent);
+        Console.WriteLine(messageDepositAndCountMounths);
         Console.WriteLine();
         #endregion
 
@@ -203,17 +111,6 @@
         int coefficientC = int.Parse(Console.ReadLine());
         int countRoots = ReturnTheRootsOfTheEquation(coefficientA, coefficientB, coefficientC);
         Console.WriteLine($"Количестов корней: {countRoots}   для уравнения {coefficientA}x^2+{coefficientB}x+{coefficientC}=0");
-        int ReturnTheRootsOfTheEquation(int a, int b, int c)
-        {
-            float D = b*b - 4*a*c;
-            if (D < 0)
-                return 0;
-            else if (D > 0)
-                return 2;
-            else
-                return 1;
-  
-        }
         #endregion  
 
     }
@@ -228,6 +125,24 @@
         return Math.Pow(num, 2);
     }
 
+    //Для 3-го задания
+    public static (int, int) CalculateThePerimeterAndArea(string side1, string side2)
+    {
+        bool resultSide1 = int.TryParse(side1, out int numberA);
+        bool resultSide2 = int.TryParse(side2, out int numberB);
+
+        if (resultSide1 && resultSide2)
+        {
+            int p = 2 * (numberA + numberB);
+            int s = numberA * numberB;
+            return (p, s);
+        }
+        else
+        {
+            Console.WriteLine("Вы ввели не число!");
+            return (-10, -10);
+        }
+    }
 
     //Для 4-го задания
     public static int SumNumber(string number)
@@ -259,5 +174,101 @@
             Console.WriteLine($"Сумма цифр числа {number} равна {multiply}");
         }
         return multiply;
+    }
+
+    //Для 5-го задания
+    public static bool CheckCondition(string strA, string strB)
+    {
+        int intA = int.Parse(strA);
+        int intB = int.Parse(strB);
+
+        if (intA > 2 && intB <= 3)
+        {
+            Console.WriteLine("Условие A > 2 и B <= 3 выполнилось");
+            return true;
+        }
+
+        else
+        {
+            Console.WriteLine("Условие A > 2 и B <= 3 невыполнилось");
+            return false;
+        }
+
+    }
+
+    //Для 6-го задания
+    public static int MinNumber(string first, string second, string third)
+    {
+        int firstNum = int.Parse(first);
+        int secondNum = int.Parse(second);
+        int thirdNum = int.Parse(third);
+
+        if (firstNum < secondNum && firstNum < thirdNum)
+            return firstNum;
+        else if (secondNum < firstNum && secondNum < thirdNum)
+            return secondNum;
+        else
+            return thirdNum;
+
+    }
+
+    //Для 7-го задания
+    public static string ReturnMessageDayOfWeek(string dayOfWeek) 
+    {
+        switch (dayOfWeek)
+        {
+            case "1":
+                return $"Понедельник соответствует цифре {dayOfWeek}";
+                
+            case "2":
+                return $"Вторник соответствует цифре {dayOfWeek}";
+                
+            case "3":
+                return $"Среда соответствует цифре {dayOfWeek}";
+                
+            case "4":
+                return $"Четверг соответствует цифре {dayOfWeek}";
+                
+            case "5":
+                return $"Пятница соответствует цифре {dayOfWeek}";
+                
+            case "6":
+                return $"Суббота соответствует цифре {dayOfWeek}";
+
+            case "7":
+                return $"Воскресенье соответствует цифре {dayOfWeek}";
+
+            default:
+                return $"Данная цифра {dayOfWeek} не соответствует дням недели";
+        }
+    }
+
+    //Для 9-го задания
+    public static string FindDepositAndCountMounths(int per)
+    {
+        if (per > 25) return $"Слишком большая сумма процента {per}";
+
+        int deposite = 1000;
+        int countMouths = 0;
+        while (deposite < 1100)
+        {
+            deposite += per;
+            countMouths++;
+        }
+        return $"От 1000 до {deposite} за {countMouths} месяц(а/ев) при сумме процента {per}";
+
+    }
+
+    //Для 10-го задания
+    public static int ReturnTheRootsOfTheEquation(int a, int b, int c)
+    {
+        float D = b * b - 4 * a * c;
+        if (D < 0)
+            return 0;
+        else if (D > 0)
+            return 2;
+        else
+            return 1;
+
     }
 }
