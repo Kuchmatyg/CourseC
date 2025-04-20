@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Повторение", "П�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПовторениеTests", "ПовторениеTests\ПовторениеTests.csproj", "{BC8078D4-B171-4F68-B2F3-FCBA810611A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectCodewars", "TestProjectCodewars\TestProjectCodewars.csproj", "{06AF2136-73C1-45B7-B88C-40574BD915DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BC8078D4-B171-4F68-B2F3-FCBA810611A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC8078D4-B171-4F68-B2F3-FCBA810611A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC8078D4-B171-4F68-B2F3-FCBA810611A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AF2136-73C1-45B7-B88C-40574BD915DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AF2136-73C1-45B7-B88C-40574BD915DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AF2136-73C1-45B7-B88C-40574BD915DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AF2136-73C1-45B7-B88C-40574BD915DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
